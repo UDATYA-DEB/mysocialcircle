@@ -1,0 +1,75 @@
+.sidebarContainer {
+  flex: 3;
+  height: calc(100vh - 50px); /* since if height only 100vh it will overflow*/
+  overflow-y: scroll; /* to scroll down only this div and not the whole page */
+
+  position: sticky;
+  top: 50px;
+}
+
+/* to edit the scrollbar */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  /*the path*/
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  /*the dragging item*/
+  background-color: rgb(205, 204, 204);
+}
+
+.sidebarWrapper {
+  padding: 20px;
+}
+
+.sidebarFriend,
+.sidebarList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebarListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.sidebarListItemText {
+  margin-left: 15px;
+}
+
+.sidebarButton {
+  width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 500;
+  background-color: #f0eef0;
+  cursor: pointer;
+}
+
+.sidebarHr {
+  margin: 20px 0;
+}
+
+.sidebarFriendProfilePic {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.sidebarFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}

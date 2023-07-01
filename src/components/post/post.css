@@ -1,0 +1,81 @@
+.postContainer {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 14px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 14px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 14px -7px rgba(0, 0, 0, 0.75);
+  margin-top: 30px;
+}
+
+.postWrapper {
+  padding: 10px;
+}
+
+.postTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postTopLeft {
+  display: flex;
+  align-items: center;
+}
+
+.postTopProfilePic {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.postTopName {
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0 10px;
+}
+
+.postTopTime {
+  font-weight: 500;
+  color: grey;
+  font-size: 12px;
+}
+
+.postMiddle {
+  margin: 20px 0;
+}
+
+.postMiddleImage {
+  margin-top: 20px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain; /* to show all the image without cropping*/
+}
+
+.postBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postBottomLeft {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postLike {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.postBottomText {
+  font-size: 15px;
+}
+
+.postBottomRight {
+  border-bottom: 1px dashed grey;
+  font-size: 15px;
+  cursor: pointer;
+}
