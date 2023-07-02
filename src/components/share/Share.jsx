@@ -11,7 +11,11 @@ const Share = () => {
     <div className="shareContainer">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img src="./assets/person/1.jpg" alt="" className="shareProfilePic" />
+          <img
+            src="./assets/person/2jl.jpg"
+            alt=""
+            className="shareProfilePic"
+          />
           <input
             type="text"
             placeholder="What's in your mind ?"

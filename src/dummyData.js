@@ -60,8 +60,6 @@ export const Posts = [
     userId: 1,
     like: 32,
     comment: 9,
-    username: "Safak Kocaoglu",
-    profilePicture: "./assets/person/1.jpg",
   },
   {
     id: 2,
@@ -70,8 +68,6 @@ export const Posts = [
     userId: 2,
     like: 2,
     comment: 1,
-    username: "Janell Shrum",
-    profilePicture: "./assets/person/2.jpg",
   },
   {
     id: 3,
@@ -81,8 +77,6 @@ export const Posts = [
     userId: 3,
     like: 61,
     comment: 2,
-    username: "Alex Durden",
-    profilePicture: "./assets/person/3.jpg",
   },
   {
     id: 4,
@@ -91,8 +85,6 @@ export const Posts = [
     userId: 4,
     like: 7,
     comment: 3,
-    username: "Dora Hawks",
-    profilePicture: "./assets/person/4.jpg",
   },
   {
     id: 5,
@@ -101,8 +93,6 @@ export const Posts = [
     userId: 5,
     like: 23,
     comment: 5,
-    username: "Travis Bennett",
-    profilePicture: "./assets/person/5.jpg",
   },
   {
     id: 6,
@@ -111,7 +101,5 @@ export const Posts = [
     userId: 6,
     like: 44,
     comment: 6,
-    username: "Gary Duty",
-    profilePicture: "./assets/person/6.jpg",
   },
 ];

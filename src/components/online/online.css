@@ -1,0 +1,36 @@
+.rightbarFriend {
+  margin: 10px 0;
+}
+
+.rightbarFriendContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rightbarFriendImageContainer {
+  position: relative;
+}
+
+.rightbarFriendOnlineBadge {
+  width: 13px;
+  height: 13px;
+  background-color: rgb(20, 239, 45);
+  border: 2px solid white;
+  border-radius: 25px;
+  position: absolute;
+  top: -5px;
+  right: 10px;
+}
+
+.rightbarFriendName {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.rightbarFriendPic {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-right: 10px;
+}

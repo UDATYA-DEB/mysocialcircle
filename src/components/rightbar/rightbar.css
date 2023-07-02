@@ -42,39 +42,58 @@
   list-style: none;
 }
 
-.rightbarFriend {
-  margin: 10px 0;
-}
-
-.rightbarFriendContainer {
+.profileRightbarTop {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.rightbarFriendImageContainer {
-  position: relative;
+.profileRightbarTitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
-.rightbarFriendOnlineBadge {
-  width: 13px;
-  height: 13px;
-  background-color: rgb(20, 239, 45);
-  border: 2px solid white;
-  border-radius: 25px;
-  position: absolute;
-  top: -5px;
-  right: 10px;
+.profileInfoContainer {
+  margin-bottom: 10px;
 }
 
-.rightbarFriendName {
-  font-weight: 800;
+.profileInfoTitle {
+  font-weight: 500;
+  color: rgb(82, 82, 82);
   font-size: 16px;
 }
 
-.rightbarFriendPic {
-  height: 40px;
-  width: 40px;
+.profileInfoDesc {
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.profileRightbarBottom {
+  margin-top: 20px;
+}
+
+.profileRightbarFollowings {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profileRightbarFollowing {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.profileRightbarFollowingPic {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
   object-fit: cover;
-  border-radius: 25px;
-  margin-right: 10px;
+}
+
+.profileRightbarFollowingUname {
+  margin-top: 5px;
 }

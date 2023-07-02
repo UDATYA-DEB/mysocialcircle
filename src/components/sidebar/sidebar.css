@@ -7,22 +7,6 @@
   top: 50px;
 }
 
-/* to edit the scrollbar */
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  /*the path*/
-  background-color: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  /*the dragging item*/
-  background-color: rgb(205, 204, 204);
-}
-
 .sidebarWrapper {
   padding: 20px;
 }
