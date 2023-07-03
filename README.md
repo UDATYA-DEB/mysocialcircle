@@ -1,3 +1,3 @@
 # Project Deployed. Click on the link below :-
-https://animated-ganache-e3d788.netlify.app
+https://animated-ganache-e3d788.netlify.app\n
 user:pass => guest@email.com  :  guest@email.com
