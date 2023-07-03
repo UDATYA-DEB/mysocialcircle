@@ -5,6 +5,7 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import "./home.css";
 
 const Home = () => {
+  alert("Double click on top right profile pic to log out!");
   return (
     <>
       <Topbar />

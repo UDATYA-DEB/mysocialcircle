@@ -32,7 +32,6 @@ export const FirebaseProvider = (props) => {
       if (us) {
         setUser(us);
         navigate("/");
-        alert("Double click on top right profile pic to log out!");
       } else {
         setUser(null);
         navigate("/login");
