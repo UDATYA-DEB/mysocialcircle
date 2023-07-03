@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import Loader from "../../components/loader/Loader";
+import { Link } from "react-router-dom";
 import "./signup.css";
 
 const Signup = () => {
+  const [loader, setLoader] = useState(false);
+  const handleLogin = () => {
+    setLoader(true);
+  };
   return (
     <div className="signupContainer">
+      {loader && <Loader />}
       <div className="signupWrapper">
         <div className="signupLeft">
           <h2 className="signupLogo">MySocialCircle</h2>
@@ -25,8 +32,17 @@ const Signup = () => {
               placeholder="Password Again"
               className="signupInput"
             />
-            <button className="signupBtn">Sign Up</button>
-            <button className="newAccountBtn">Log into Account</button>
+            <button className="signupBtn" onClick={handleLogin}>
+              Sign Up
+            </button>
+            <button className="newAccountBtn">
+              <Link
+                to="/login"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                Log into Account
+              </Link>
+            </button>
           </div>
         </div>
       </div>
