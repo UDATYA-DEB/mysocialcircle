@@ -13,6 +13,8 @@
 .loaderWrapper {
   width: 100px;
   height: 100px;
+  background-color: #e6f0f0;
+  border-radius: 20px;
 }
 
 .loaderAnimation {

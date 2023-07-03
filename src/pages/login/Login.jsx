@@ -1,12 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./login.css";
 import Loader from "../../components/loader/Loader";
 import { Link } from "react-router-dom";
+import { useFirebase } from "../../context/Firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loader, setLoader] = useState(false);
+  const emailRef = useRef(null);
+  const passRef = useRef(null);
+  const firebase = useFirebase();
+  const navigate = useNavigate();
+
   const handleLogin = () => {
-    setLoader(true);
+    if (emailRef.current.value && passRef.current.value) {
+      setLoader(true);
+      firebase
+        .signinWithEmailPass(emailRef.current.value, passRef.current.value)
+        .then((value) => {
+          // alert("Success");
+          navigate("/");
+        })
+        .catch((err) => {
+          alert("Not Found");
+          setLoader(false);
+        });
+    } else {
+      alert("Inputs are required!");
+    }
   };
 
   return (
@@ -26,11 +47,13 @@ const Login = () => {
                 type="email"
                 placeholder="Enter Email"
                 className="loginInput"
+                ref={emailRef}
               />
               <input
                 type="password"
                 placeholder="Enter Password"
                 className="loginInput"
+                ref={passRef}
               />
               <button className="loginBtn" onClick={handleLogin}>
                 Log In

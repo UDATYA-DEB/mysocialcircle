@@ -3,12 +3,17 @@ import { Search } from "@material-ui/icons";
 import { Person } from "@material-ui/icons";
 import { Message } from "@material-ui/icons";
 import { Notifications } from "@material-ui/icons";
+import { Link } from "react-router-dom";
+import { useFirebase } from "../../context/Firebase";
 
 const Topbar = () => {
+  const firebase = useFirebase();
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-        <span className="logo">MySocialCircle</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">MySocialCircle</span>
+        </Link>
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
@@ -39,11 +44,13 @@ const Topbar = () => {
             <span className="topbarIconItemBadge">10</span>
           </div>
         </div>
-        <img
-          src="./assets/person/2jl.jpg"
-          alt=""
-          className="topbarProfilePic"
-        />
+        <Link to={"/myprofile"} onDoubleClick={firebase.handleSignOut}>
+          <img
+            src="./assets/person/2jl.jpg"
+            alt=""
+            className="topbarProfilePic"
+          />
+        </Link>
       </div>
     </div>
   );

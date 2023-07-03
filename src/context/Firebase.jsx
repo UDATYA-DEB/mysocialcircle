@@ -1,8 +1,13 @@
-import { createContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
-const FirebaseContext = createContext(null);
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDx-X540v-JiYsyI8lEtblRw-kerFlLiLo",
@@ -14,19 +19,43 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const firebaseAuth = getAuth(app);
+const FirebaseContext = createContext(null);
 
-// const auth = getAuth(app);
-// signInWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//   });
+export const useFirebase = () => useContext(FirebaseContext);
 
-export const FirebaseContextProvider = (props) => {
-  return <FirebaseContextProvider>{props.children}</FirebaseContextProvider>;
+export const FirebaseProvider = (props) => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  useEffect(() => {
+    onAuthStateChanged(firebaseAuth, (us) => {
+      if (us) {
+        setUser(us);
+        navigate("/");
+        alert("Double click on top right profile pic to log out!");
+      } else {
+        setUser(null);
+        navigate("/login");
+      }
+    });
+  }, [firebaseAuth]);
+
+  const signupWithEmailPass = (email, pass) => {
+    return createUserWithEmailAndPassword(firebaseAuth, email, pass);
+  };
+
+  const signinWithEmailPass = (email, pass) => {
+    return signInWithEmailAndPassword(firebaseAuth, email, pass);
+  };
+
+  const handleSignOut = () => {
+    signOut(firebaseAuth);
+  };
+  return (
+    <FirebaseContext.Provider
+      value={{ signupWithEmailPass, signinWithEmailPass, handleSignOut }}
+    >
+      {props.children}
+    </FirebaseContext.Provider>
+  );
 };
